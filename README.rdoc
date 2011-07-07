@@ -9,6 +9,13 @@ Current limitations are:
 A serious lack of documentation
 Performance needs optimization. Run on Ruby 1.9 for best results.
 
+== Usage
+
+    ~$ gem install RAFL
+
+    require 'RAFL'
+    RAFL::generate_sine_wave()
+
 == Contributing to RAFL
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
