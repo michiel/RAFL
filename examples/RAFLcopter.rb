@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -wKU
+#!/usr/bin/env ruby 
 
 #
 # RAFLcopter.rb by Aaron Cohen
@@ -7,7 +7,7 @@
 # 
 #
 
-require 'RAFL_wav.rb'
+require File.dirname(__FILE__) + "/../lib/RAFL"
 require 'benchmark'
 
 $quit = false
@@ -20,7 +20,7 @@ def read_wav
     userfile = gets.strip.chomp.gsub("\\ ", " ")
   end
   
-  inputfile = RiffFile.new(userfile, 'r')
+  inputfile = RAFL::RiffFile.new(userfile, 'r')
   
   puts ""
   puts "--- #{userfile.to_s} ---"
@@ -62,8 +62,7 @@ def gen_white_noise_arg(length_secs, sample_rate, bit_depth)
   peak_db = gets.chomp.strip.to_f
   
   puts "Generating White Noise..."
-  return generate_white_noise(length_secs, peak_db, sample_rate, bit_depth)
-  
+  RAFL::generate_white_noise(length_secs, peak_db, sample_rate, bit_depth)
 end
 
 def gen_pink_noise_arg(length_secs, sample_rate, bit_depth)
@@ -72,7 +71,7 @@ def gen_pink_noise_arg(length_secs, sample_rate, bit_depth)
   peak_db = gets.chomp.strip.to_f
 
   puts "Generating Pink Noise..."
-  return generate_pink_noise(length_secs, peak_db, sample_rate, bit_depth)
+  RAFL::generate_pink_noise(length_secs, peak_db, sample_rate, bit_depth)
 end
 
 def gen_sine_wave_arg(length_secs, sample_rate, bit_depth)
@@ -86,8 +85,7 @@ def gen_sine_wave_arg(length_secs, sample_rate, bit_depth)
   freq = gets.chomp.strip.to_i
 
   puts "Generating Sine Wave..."
-  return generate_sine_wave(length_secs, peak_db, freq, sample_rate, bit_depth)
-
+  RAFL::generate_sine_wave(length_secs, peak_db, freq, sample_rate, bit_depth)
 end
 
 def write_wav
@@ -97,7 +95,7 @@ def write_wav
   puts "Enter name of file to write to:"
   userfile = gets.chomp.strip
   
-  outputfile = RiffFile.new(userfile, 'w+')
+  outputfile = RAFL::RiffFile.new(userfile, 'w+')
   
   puts ""
   puts "Number of channels? (surround sound supported)"
