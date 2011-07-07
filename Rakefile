@@ -16,11 +16,11 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "RAFL"
   gem.homepage = "http://github.com/michiel/RAFL"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "michiel@etryx.com"
-  gem.authors = ["Michiel Kalkman"]
+  gem.license = "LGPL"
+  gem.summary = %Q{Ruby Audio File Library}
+  gem.description = %Q{RAFL is a Ruby Audio File Library, written by Aaron Cohen (c) 2009. Distributed under the LGPL license.}
+  gem.email = "michielkalkman@gmail.com"
+  gem.authors = ["Aaron Cohen", "Michiel Kalkman"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
